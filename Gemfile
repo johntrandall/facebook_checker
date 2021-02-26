@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 
-gem 'capybara', '>= 3.26'
+gem 'capybara'
 gem 'webdrivers'
 
 group :development, :test do
