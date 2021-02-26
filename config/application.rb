@@ -18,5 +18,14 @@ module FacebookChecker
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    Capybara.run_server = false
+    # Capybara.javascript_driver = :chromedriver
+    Capybara.configure do |config|
+      config.default_max_wait_time = 10 # seconds
+      config.default_driver = :selenium
+    end
   end
 end
+
+
