@@ -1,0 +1,2 @@
+class CheckResult < ApplicationRecord
+end
