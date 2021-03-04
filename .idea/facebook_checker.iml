@@ -52,6 +52,8 @@
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.10.0, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.14.2, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.4.2, rbenv: 2.7.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="gruff (v0.12.1, rbenv: 2.7.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="histogram (v0.2.4.1, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.8.9, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.11.2, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.4.1, rbenv: 2.7.1) [gem]" level="application" />
@@ -82,6 +84,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.10.4, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.10.1, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.1.1, rbenv: 2.7.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rmagick (v4.2.2, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.0, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v6.0.0, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sassc (v2.4.0, rbenv: 2.7.1) [gem]" level="application" />
@@ -410,6 +413,42 @@
               <RakeTaskImpl id="sockets">
                 <subtasks>
                   <RakeTaskImpl description="" fullCommand="tmp:sockets:clear" id="clear" />
+                </subtasks>
+              </RakeTaskImpl>
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="webdrivers">
+            <subtasks>
+              <RakeTaskImpl id="chromedriver">
+                <subtasks>
+                  <RakeTaskImpl description="Force remove chromedriver" fullCommand="webdrivers:chromedriver:remove" id="remove" />
+                  <RakeTaskImpl description="Remove and download updated chromedriver if necessary" fullCommand="webdrivers:chromedriver:update[version]" id="update[version]" />
+                  <RakeTaskImpl description="Print current chromedriver version" fullCommand="webdrivers:chromedriver:version" id="version" />
+                  <RakeTaskImpl description="" fullCommand="webdrivers:chromedriver:update" id="update" />
+                </subtasks>
+              </RakeTaskImpl>
+              <RakeTaskImpl id="edgedriver">
+                <subtasks>
+                  <RakeTaskImpl description="Force remove edgedriver" fullCommand="webdrivers:edgedriver:remove" id="remove" />
+                  <RakeTaskImpl description="Remove and download updated edgedriver if necessary" fullCommand="webdrivers:edgedriver:update[version]" id="update[version]" />
+                  <RakeTaskImpl description="Print current edgedriver version" fullCommand="webdrivers:edgedriver:version" id="version" />
+                  <RakeTaskImpl description="" fullCommand="webdrivers:edgedriver:update" id="update" />
+                </subtasks>
+              </RakeTaskImpl>
+              <RakeTaskImpl id="geckodriver">
+                <subtasks>
+                  <RakeTaskImpl description="Force remove geckodriver" fullCommand="webdrivers:geckodriver:remove" id="remove" />
+                  <RakeTaskImpl description="Remove and download updated geckodriver if necessary" fullCommand="webdrivers:geckodriver:update[version]" id="update[version]" />
+                  <RakeTaskImpl description="Print current geckodriver version" fullCommand="webdrivers:geckodriver:version" id="version" />
+                  <RakeTaskImpl description="" fullCommand="webdrivers:geckodriver:update" id="update" />
+                </subtasks>
+              </RakeTaskImpl>
+              <RakeTaskImpl id="iedriver">
+                <subtasks>
+                  <RakeTaskImpl description="Force remove IEDriverServer" fullCommand="webdrivers:iedriver:remove" id="remove" />
+                  <RakeTaskImpl description="Remove and download updated IEDriverServer if necessary" fullCommand="webdrivers:iedriver:update[version]" id="update[version]" />
+                  <RakeTaskImpl description="Print current IEDriverServer version" fullCommand="webdrivers:iedriver:version" id="version" />
+                  <RakeTaskImpl description="" fullCommand="webdrivers:iedriver:update" id="update" />
                 </subtasks>
               </RakeTaskImpl>
             </subtasks>

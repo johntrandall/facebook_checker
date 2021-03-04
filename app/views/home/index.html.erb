@@ -1,0 +1,10 @@
+<%= image_tag(@graph_file_name) %>
+
+<table>
+<% @resuts_to_render_in_table.find_each do |result|%>
+    <tr>
+      <td><%= result.created_at %></td>
+      <td><%= result.result %></td>
+    </tr>
+<% end %>
+</table>
