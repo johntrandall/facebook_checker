@@ -22,9 +22,9 @@ module FacebookChecker
     # point to the heroku Chrome from heroku-buildpack-google-chrome
     #
 
-    # if ENV['HEROKU'].present?
-    #   Selenium::WebDriver::Chrome.path = ENV.fetch('GOOGLE_CHROME_SHIM')
-    # end
+    if ENV['HEROKU'].present?
+      Selenium::WebDriver::Chrome.path = ENV.fetch('GOOGLE_CHROME_SHIM')
+    end
     #
     # Capybara.register_driver :chrome do |app|
     #   Capybara::Selenium::Driver.new(app, browser: :chrome)
