@@ -1,6 +1,13 @@
 class FacebookCheckerJob < ApplicationJob
 
   def perform(name_to_find = nil)
+    # point to the heroku Chrome from heroku-buildpack-google-chrome
+    if ENV['HEROKU'].present?
+      Selenium::WebDriver::Chrome.path = ENV.fetch('GOOGLE_CHROME_SHIM')
+    end
+    Capybara.default_driver = :selenium_chrome_headless
+    Capybara.javascript_driver = :selenium_chrome_headless
+
     name = name_to_find || Rails.application.credentials.name_to_search
     puts Time.now
 
