@@ -23,7 +23,7 @@ module FacebookChecker
     #
 
     if ENV['HEROKU'].present?
-      Selenium::WebDriver::Chrome.path = ENV.fetch('GOOGLE_CHROME_SHIM')
+      Selenium::WebDriver::Chrome.path = ENV['GOOGLE_CHROME_SHIM']
     end
     #
     # Capybara.register_driver :chrome do |app|
